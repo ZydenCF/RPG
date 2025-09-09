@@ -4,12 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace RPG
 {
-    internal class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+            try
+            {
+                RPGGame game = new RPGGame();
+                game.StartGame();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error crítico: " + ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Presiona cualquier tecla para salir");
+                Console.ReadKey();
+            }
         }
     }
 }
